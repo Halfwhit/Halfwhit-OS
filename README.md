@@ -1,5 +1,5 @@
 # Halfwhit-OS
 Dependancies:
 - git
-- dialog
+- libnewt
 
