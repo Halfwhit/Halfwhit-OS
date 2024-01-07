@@ -99,4 +99,4 @@ installleftwm() { \
 
 choosewm || error "User chose to exit"
 
-installleftwm && sudo pacman -Sy leftwm eww-git
+installleftwm && paru -S leftwm eww-git
