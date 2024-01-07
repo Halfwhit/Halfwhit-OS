@@ -49,31 +49,54 @@ echo "## Syncing the repos and installing 'whiptail' if not installed ##"
 echo "##################################################################"
 sudo pacman --noconfirm --needed -Syu libnewt || error "Error syncing the repos."
 
+# Basic boilerplate
+
 welcome() { \
-    whiptail --title "Installing Halfwhit OS!" --msgbox "This is a script that will install Halfwhit OS (Halfwhit's operating system).  It's really just an installation script for my tiling window manager configurations and associated programs.  You will be asked to enter your sudo password at various points during this installation, so stay near the computer." 16 60
+	whiptail --title "Installing Halfwhit OS!" --msgbox "This is a script that will install Halfwhit OS (Halfwhit's operating system).  It's really just an installation script for my tiling window manager configurations and associated programs.  You will be asked to enter your sudo password at various points during this installation, so stay near the computer." 16 60
 }
 
 welcome || error "User choose to exit."
 
 speedwarning() { \
-    whiptail --title "Installing Halfwhit OS!" --yesno "WARNING! The ParallelDownloads option is not enabled in /etc/pacman.conf. This may result in slower installation speeds. Are you sure you want to continue?" 16 60 || error "User choose to exit."
+	whiptail --title "Installing Halfwhit OS!" --yesno "WARNING! The ParallelDownloads option is not enabled in /etc/pacman.conf. This may result in slower installation speeds. Are you sure you want to continue?" 16 60 || error "User choose to exit."
 }
 
 distrowarning() { \
-    whiptail --title "Installing Halfwhit OS!" --msgbox "WARNING! While this script works on all Arch based distros, this hasn't been tested. If anyone else ever tries to use this script and has problems, please raise an issue on the Github page." 16 60 || error "User choose to exit."
+	whiptail --title "Installing Halfwhit OS!" --msgbox "WARNING! While this script works on all Arch based distros, this hasn't been tested. If anyone else ever tries to use this script and has problems, please raise an issue on the Github page." 16 60 || error "User choose to exit."
 }
 
 grep -qs "#ParallelDownloads" /etc/pacman.conf && speedwarning
 grep -qs "ID=arch" /etc/os-release || distrowarning
 
 lastchance() { \
-    whiptail --title "Installing Halfwhit OS!" --msgbox "WARNING! The Halfwhit OS installation script is permanently in public beta testing. There are almost certainly errors in it; therefore, it is strongly recommended that you not install this on production machines. It is recommended that you try this out in either a virtual machine or on a test machine." 16 60
+	whiptail --title "Installing Halfwhit OS!" --msgbox "WARNING! The Halfwhit OS installation script is permanently in public beta testing. There are almost certainly errors in it; therefore, it is strongly recommended that you not install this on production machines. It is recommended that you try this out in either a virtual machine or on a test machine." 16 60
 
-    whiptail --title "Are You Sure You Want To Do This?" --yesno "Shall we begin installing Halfwhit OS?" 8 60 || { clear; exit 1; }
+	whiptail --title "Are You Sure You Want To Do This?" --yesno "Shall we begin installing Halfwhit OS?" 8 60 || { clear; exit 1; }
 }
 
 lastchance || error "User choose to exit."
+# End of boilerplate
 
 # Set up locales
 grep "LC_CTYPE" /etc/locale.conf && echo "Checking the LC_CYPE variable in /etc/locale.conf. Variable is already set." || grep "LANG=" /etc/locale.conf | sed 's/LANG=/LC_CTYPE=/g' | sudo tee -a /etc/locale.conf
 sudo locale-gen
+
+# Bootstrap paru
+bootstrapparu() { \
+	whiptail --title "Bootstrap paru?" --yesno "Shall we start by bootstrapping paru, the package manager of choice?" 8 60
+}
+
+bootstrapparu && sudo pacman -Sy rustup && rustup default nightly && git clone https://aur.archlinux.org/paru.git && cd paru && makepkg -si && rm -rf paru && paru -S devtools asp bat paru parui-git
+
+# Window manager selection
+choosewm() { \
+	whiptail --title "CHOOSE YOUR WINDOW MANAGER(S)" --msgbox "Choose at least one window manager to install. The only choice currently is leftwm, but hopefully more will get added in time." 16 60
+}
+
+installleftwm() { \
+	whiptail --title "Window Managers - Leftwm" --yesno "Would you like to install Leftwm?" 8 60
+}
+
+choosewm || error "User chose to exit"
+
+installleftwm && sudo pacman -Sy leftwm eww-git
