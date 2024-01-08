@@ -100,3 +100,10 @@ installleftwm() { \
 choosewm || error "User chose to exit"
 
 installleftwm && paru -S leftwm eww-git
+
+echo "##############################################################"
+echo "## Copying Halfwhit OS configuration files into users \$HOME ##"
+echo "##############################################################"
+
+[ ! -d ~/.config ] && mkdir ~/.config
+cp -r ./configs/* ~/.config
