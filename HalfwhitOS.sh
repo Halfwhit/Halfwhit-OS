@@ -91,6 +91,7 @@ bootstrapparu && sudo pacman -Sy rustup && rustup default nightly && git clone h
 # Is this a VM?
 vmtools() { \
 	whiptail --title "Is this installation a VM?" --yesno "If this is a virtual machine, selecting yes will install the appropriate open-vm-tools" 8 60
+}
 
 vmtools && paru -S open-vm-tools xf86-input-vmmouse xf86-video-vmware mesa gtk2 gtkmm && sudo systemctl enable vmtoolsd --now
 
@@ -105,7 +106,7 @@ installleftwm() { \
 
 choosewm || error "User chose to exit"
 
-installleftwm && paru -S leftwm eww-git
+installleftwm && paru -S leftwm eww-git picom alacritty
 
 echo "##############################################################"
 echo "## Copying Halfwhit OS configuration files into users \$HOME ##"
