@@ -113,4 +113,6 @@ echo "## Copying Halfwhit OS configuration files into users \$HOME ##"
 echo "##############################################################"
 
 [ ! -d ~/.config ] && mkdir ~/.config
-cp -r ./configs/. ~/.config/
+cp -r ./configs/eww ~/.config/
+cp -r ./configs/paru ~/.config/
+cp -r ./configs/leftwm ~/.config/
