@@ -88,6 +88,12 @@ bootstrapparu() { \
 
 bootstrapparu && sudo pacman -Sy rustup && rustup default nightly && git clone https://aur.archlinux.org/paru.git && cd paru && makepkg -si && rm -rf paru && paru -S devtools asp bat paru parui-git
 
+# Is this a VM?
+vmtools() { \
+	whiptail --title "Is this installation a VM?" --yesno "If this is a virtual machine, selecting yes will install the appropriate open-vm-tools" 8 60
+
+vmtools && paru -S open-vm-tools xf86-input-vmmouse xf86-video-vmware mesa gtk2 gtkmm && sudo systemctl enable vmtoolsd --now
+
 # Window manager selection
 choosewm() { \
 	whiptail --title "CHOOSE YOUR WINDOW MANAGER(S)" --msgbox "Choose at least one window manager to install. The only choice currently is leftwm, but hopefully more will get added in time." 16 60
