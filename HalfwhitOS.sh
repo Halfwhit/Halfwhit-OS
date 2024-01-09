@@ -86,7 +86,7 @@ bootstrapparu() { \
 	whiptail --title "Bootstrap paru?" --yesno "Shall we start by bootstrapping paru, the package manager of choice?" 8 60
 }
 
-bootstrapparu && sudo pacman -Sy rustup && rustup default nightly && git clone https://aur.archlinux.org/paru.git && cd paru && makepkg -si && rm -rf paru && paru -S devtools asp bat paru parui-git
+bootstrapparu && sudo pacman -Sy rustup && rustup default nightly && git clone https://aur.archlinux.org/paru.git && cd paru && makepkg -si && cd .. && rm -rf paru && paru -S devtools asp bat paru parui-git
 
 # Is this a VM?
 vmtools() { \
@@ -113,8 +113,4 @@ echo "## Copying Halfwhit OS configuration files into users \$HOME ##"
 echo "##############################################################"
 
 [ ! -d ~/.config ] && mkdir ~/.config
-# cp -r ./configs/eww ~/.config/
-# cp -r ./configs/paru ~/.config/
-# cp -r ./configs/leftwm ~/.config/
-# cp -r "configs/"* "~/.config/"
 cp -r ./configs/* $HOME/.config/
