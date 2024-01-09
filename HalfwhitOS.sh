@@ -116,4 +116,5 @@ echo "##############################################################"
 # cp -r ./configs/eww ~/.config/
 # cp -r ./configs/paru ~/.config/
 # cp -r ./configs/leftwm ~/.config/
-cp -r "configs/"* "~/.config/"
+# cp -r "configs/"* "~/.config/"
+bash -c "cp -r ./configs/* ~/.config/"
