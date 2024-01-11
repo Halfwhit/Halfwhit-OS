@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+
+## BOILERPLATE START ##
 export SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
 
 #if path to liblinkt is not not exported do so:
@@ -12,14 +14,16 @@ if [ -f "/tmp/leftwm-theme-down" ]; then
     rm /tmp/leftwm-theme-down
 fi
 ln -s $SCRIPTPATH/down /tmp/leftwm-theme-down
+## BOILERPLATE END ##
+
 
 # start eww daemon
 eww daemon &
 
 # Boot picom or compton if it exists
 if [ -x "$(command -v picom)" ]; then
-  picom --experimental-backends &> /dev/null &
-  # picom &> /dev/null &
+  # picom --experimental-backends &> /dev/null &
+  picom &> /dev/null &
 elif [ -x "$(command -v compton)" ]; then
   compton &> /dev/null &
 fi
@@ -28,8 +32,8 @@ fi
 leftwm-command "LoadTheme $SCRIPTPATH/theme.ron"
 
 # Set background
-if [ -x "$(command -v feh)" ]; then
-  feh --bg-scale $SCRIPTPATH/background.jpg
+if [ -x "$(command -v pacwall)" ]; then
+  pacwall 
 fi
 
 #open eww 'bar' windows

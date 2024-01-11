@@ -106,7 +106,7 @@ installleftwm() { \
 
 choosewm || error "User chose to exit"
 
-installleftwm && paru -S leftwm eww-git picom alacritty nerd-fonts
+installleftwm && paru -S leftwm eww-git picom alacritty nerd-fonts pacwall-git hsetroot
 
 echo "##############################################################"
 echo "## Copying Halfwhit OS configuration files into users \$HOME ##"
