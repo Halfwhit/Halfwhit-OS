@@ -106,7 +106,7 @@ installleftwm() { \
 
 choosewm || error "User chose to exit"
 
-installleftwm && paru -S leftwm eww-git picom alacritty nerd-fonts pacwall-git hsetroot xsel xclip btop fish fisher starship topgrade fd exa ripgrep fetchit-git && systemctl --user enable pacwall-watch-packages.path && systemctl --user enable pacwall-watch-updates.timer
+installleftwm && paru -S leftwm eww-git picom alacritty nerd-fonts pacwall-git hsetroot xsel xclip btop fish fisher starship topgrade fd exa ripgrep fetchit-git greetd greetd-tuigreet && systemctl --user enable pacwall-watch-packages.path && systemctl --user enable pacwall-watch-updates.timer
 
 echo "##############################################################"
 echo "## Copying Halfwhit OS configuration files into users \$HOME ##"
@@ -114,3 +114,4 @@ echo "##############################################################"
 
 [ ! -d ~/.config ] && mkdir ~/.config
 cp -r ./configs/* $HOME/.config/
+cp -r ./etc-configs/* /etc/
