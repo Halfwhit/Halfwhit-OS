@@ -1,0 +1,8 @@
+[shell]
+program = "/bin/fish"
+
+[window]
+opacity = 0.8
+
+[font]
+size = 18
