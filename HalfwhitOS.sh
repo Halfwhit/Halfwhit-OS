@@ -114,4 +114,5 @@ echo "##############################################################"
 
 [ ! -d ~/.config ] && mkdir ~/.config
 cp -r ./configs/* $HOME/.config/
+ln -s ~/.config/bash/bashrc ~/.bashrc
 cp -r ./etc-configs/* /etc/
