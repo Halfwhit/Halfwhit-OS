@@ -114,7 +114,8 @@ echo "##############################################################"
 
 [ ! -d ~/.config ] && mkdir ~/.config
 cp -r ./configs/* $HOME/.config/
-ln -s ~/.config/bash/bashrc ~/.bashrc
+cp ./configs/bash/bashrc ~/.bashrc
+cp ./configs/X11/xinitrc ~/.xinitrc
 sudo cp -r ./etc-configs/* /etc/
 
 sudo reboot
