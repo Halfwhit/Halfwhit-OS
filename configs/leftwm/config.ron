@@ -72,7 +72,7 @@
     auto_derive_workspaces: true,
     disable_cursor_reposition_on_resize: false,
     keybind: [
-        (command: Execute, value: "dmenu_run", modifier: ["modkey"], key: "p"),
+        (command: Execute, value: "rofi -show dmenu", modifier: ["modkey"], key: "p"),
         (command: Execute, value: "alacritty", modifier: ["modkey", "Shift"], key: "Return"),
         (command: CloseWindow, value: "", modifier: ["modkey", "Shift"], key: "q"),
         (command: SoftReload, value: "", modifier: ["modkey", "Shift"], key: "r"),
