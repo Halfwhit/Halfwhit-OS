@@ -118,4 +118,4 @@ cp ./configs/bash/bashrc ~/.bashrc
 cp ./configs/X11/xinitrc ~/.xinitrc
 sudo cp -r ./etc-configs/* /etc/
 
-sudo reboot
+# sudo reboot
