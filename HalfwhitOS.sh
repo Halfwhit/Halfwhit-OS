@@ -114,8 +114,9 @@ echo "##############################################################"
 
 [ ! -d ~/.config ] && mkdir ~/.config
 cp -r ./configs/* $HOME/.config/
-cp ./configs/bash/bashrc ~/.bashrc
 cp ./configs/X11/xinitrc ~/.xinitrc
 sudo cp -r ./etc-configs/* /etc/
+
+chsh $USER -s /bin/fish
 
 sudo reboot
