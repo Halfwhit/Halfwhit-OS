@@ -79,7 +79,7 @@ lastchance || error "User choose to exit."
 
 # Networking:
 paru -S networkmanager networkmanager-openvpn nm-connection-editor \
-	&& sudo systemctl enable networkmanager.service --now
+	&& sudo systemctl enable NetworkManager.service --now
 
 # Containers
 paru -S distrobox podman podman-compose podman-docker
