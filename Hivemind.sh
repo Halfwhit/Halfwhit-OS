@@ -80,7 +80,8 @@ lastchance || error "User choose to exit."
 # Networking:
 paru -S networkmanager networkmanager-openvpn nm-connection-editor \
 	&& sudo systemctl enable networkmanager.service --now
-# Virtualisation
+
+# Containers
 paru -S distrobox podman podman-compose podman-docker
 [ ! -d /etc/containers ] && sudo mkdir /etc/containers
 cp ./etc-configs/containers/registries.conf /etc/containers/
@@ -90,6 +91,8 @@ mkdir -p ~/.local/bin
 fish_add_path ~/.local/bin/
 distrobox create --pull --image rustscan/rustscan
 distrobox enter rustscan -- distrobox-export --bin /usr/local/bin/rustscan --extra-flags "-c $HOME/.config/rustscan/rustscan.toml"
+
+# Exploits
 
 #echo "##############################################################"
 #echo "##  Copying Hivemind configuration files into users \$HOME  ##"
