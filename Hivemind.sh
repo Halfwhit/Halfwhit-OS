@@ -86,11 +86,14 @@ paru -S distrobox podman podman-compose podman-docker
 cp ./etc-configs/containers/registries.conf /etc/containers/
 
 # Scanning
+mkdir -p ~/.local/bin
+fish_add_path ~/.local/bin/
 distrobox create --pull --image rustscan/rustscan
+distrobox enter rustscan -- distrobox-export --bin /usr/local/bin/rustscan --extra-flags "-c $HOME/.config/rustscan/rustscan.toml"
 
-echo "##############################################################"
-echo "##  Copying Hivemind configuration files into users \$HOME  ##"
-echo "##############################################################"
+#echo "##############################################################"
+#echo "##  Copying Hivemind configuration files into users \$HOME  ##"
+#echo "##############################################################"
 
 #[ ! -d ~/.config ] && mkdir ~/.config
 #cp -r ./configs/* $HOME/.config/
