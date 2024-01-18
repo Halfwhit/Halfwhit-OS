@@ -91,6 +91,7 @@ distrobox enter rustscan -- distrobox-export --bin /usr/local/bin/rustscan --ext
 
 # Kali
 distrobox create --pull --image kali-rolling --name hivemind
+distrobox enter hivemind -- chsh -s /usr/bin/bash
 distrobox enter hivemind -- sudo apt update
 distrobox enter hivemind -- sudo apt -y install kali-linux-headless
 
