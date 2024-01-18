@@ -82,6 +82,11 @@ paru -S networkmanager networkmanager-openvpn nm-connection-editor \
 	&& sudo systemctl enable networkmanager.service --now
 # Virtualisation
 paru -S distrobox podman podman-compose podman-docker
+[ ! -d /etc/containers ] && sudo mkdir /etc/containers
+cp ./etc-configs/containers/registries.conf /etc/containers/
+
+# Scanning
+distrobox create --pull --image rustscan/rustscan
 
 echo "##############################################################"
 echo "##  Copying Hivemind configuration files into users \$HOME  ##"
