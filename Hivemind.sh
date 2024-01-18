@@ -83,8 +83,6 @@ paru -S networkmanager networkmanager-openvpn nm-connection-editor \
 
 # Containers
 paru -S distrobox podman podman-compose podman-docker
-[ ! -d /etc/containers ] && sudo mkdir /etc/containers
-cp ./etc-configs/containers/registries.conf /etc/containers/
 
 # Scanning
 mkdir -p ~/.local/bin
