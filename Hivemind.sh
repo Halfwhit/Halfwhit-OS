@@ -90,6 +90,7 @@ distrobox create --pull --image rustscan/rustscan
 distrobox enter rustscan -- distrobox-export --bin /usr/local/bin/rustscan --extra-flags "-c $HOME/.config/rustscan/rustscan.toml"
 
 # Exploits
+paru -S metasploit postgresl
 
 #echo "##############################################################"
 #echo "##  Copying Hivemind configuration files into users \$HOME  ##"
