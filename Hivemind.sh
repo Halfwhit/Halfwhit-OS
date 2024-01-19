@@ -89,11 +89,14 @@ mkdir -p ~/.local/bin
 distrobox create --pull --image rustscan/rustscan
 distrobox enter rustscan -- distrobox-export --bin /usr/local/bin/rustscan --extra-flags "-c $HOME/.config/rustscan/rustscan.toml"
 
+# Exploits
+paru -S postgresql metasploit
+
 # Kali
-distrobox create --pull --image kali-rolling --name hivemind
-distrobox enter hivemind -- chsh -s /usr/bin/bash
-distrobox enter hivemind -- sudo apt update
-distrobox enter hivemind -- sudo apt -y install kali-linux-headless
+# distrobox create --pull --image kali-rolling --name hivemind
+# distrobox enter hivemind -- chsh -s /usr/bin/bash
+# distrobox enter hivemind -- sudo apt update
+# distrobox enter hivemind -- sudo apt -y install kali-linux-headless
 
 #echo "##############################################################"
 #echo "##  Copying Hivemind configuration files into users \$HOME  ##"
