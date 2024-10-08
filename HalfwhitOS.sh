@@ -96,17 +96,17 @@ vmtools() { \
 vmtools && paru -S open-vm-tools xf86-input-vmmouse xf86-video-vmware mesa gtk2 gtkmm && sudo systemctl enable vmtoolsd --now
 
 # Window manager selection
-choosewm() { \
-	whiptail --title "CHOOSE YOUR WINDOW MANAGER(S)" --msgbox "Choose at least one window manager to install. The only choice currently is leftwm, but hopefully more will get added in time." 16 60
-}
+#choosewm() { \
+#	whiptail --title "CHOOSE YOUR WINDOW MANAGER(S)" --msgbox "Choose at least one window manager to install. The only choice currently is leftwm, but hopefully more will get added in time." 16 60
+#}
 
-installleftwm() { \
-	whiptail --title "Window Managers - Leftwm" --yesno "Would you like to install Leftwm?" 8 60
-}
+#installleftwm() { \
+#	whiptail --title "Window Managers - Leftwm" --yesno "Would you like to install Leftwm?" 8 60
+#}
 
-choosewm || error "User chose to exit"
+#choosewm || error "User chose to exit"
 
-installleftwm && paru -S leftwm eww-git picom alacritty nerd-fonts pacwall-git hsetroot xsel xclip btop fish fisher starship topgrade fd exa ripgrep fetchit-git greetd greetd-tuigreet rofi librewolf-bin librewolf-extension-bitwarden-bin librewolf-extension-ublock-origin-bin librewolf-extension-sponsorblock-bin github-cli ncspot ueberzug playerctl xdg-utils libreoffice-fresh libreoffice-fresh-en-gb && systemctl --user enable pacwall-watch-packages.path && systemctl --user enable pacwall-watch-updates.timer && sudo systemctl enable greetd.service
+paru -S qtile picom alacritty nerd-fonts pacwall-git hsetroot xsel xclip btop fish fisher starship topgrade fd exa ripgrep fetchit-git greetd greetd-tuigreet rofi librewolf-bin librewolf-extension-bitwarden-bin librewolf-extension-ublock-origin-bin librewolf-extension-sponsorblock-bin github-cli ncspot ueberzug playerctl xdg-utils libreoffice-fresh libreoffice-fresh-en-gb && systemctl --user enable pacwall-watch-packages.path && systemctl --user enable pacwall-watch-updates.timer && sudo systemctl enable greetd.service
 
 echo "##############################################################"
 echo "## Copying Halfwhit OS configuration files into users \$HOME ##"
