@@ -1,2 +1,2 @@
 #!/bin/sh
-exec leftwm
+exec qtile start
