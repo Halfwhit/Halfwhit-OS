@@ -116,6 +116,7 @@ echo "##############################################################"
 cp -r ./configs/* $HOME/.config/
 cp ./configs/X11/xinitrc ~/.xinitrc
 sudo cp -r ./etc-configs/* /etc/
+cp .configs/qtile/english.py /usr/lib/python3.12/site-packages/qtile_extras/resources/wordclock/
 
 chsh $USER -s /bin/fish
 
