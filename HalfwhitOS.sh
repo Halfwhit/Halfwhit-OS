@@ -106,7 +106,7 @@ vmtools && paru -S open-vm-tools xf86-input-vmmouse xf86-video-vmware mesa gtk2 
 
 #choosewm || error "User chose to exit"
 
-paru -S qtile picom alacritty nerd-fonts pacwall-git hsetroot xsel xclip btop fish fisher starship topgrade fd exa ripgrep fetchit-git greetd greetd-tuigreet rofi librewolf-bin librewolf-extension-bitwarden-bin librewolf-extension-ublock-origin-bin librewolf-extension-sponsorblock-bin github-cli ncspot ueberzug playerctl xdg-utils libreoffice-fresh libreoffice-fresh-en-gb && systemctl --user enable pacwall-watch-packages.path && systemctl --user enable pacwall-watch-updates.timer && sudo systemctl enable greetd.service
+paru -S qtile picom alacritty nerd-fonts xsel xclip btop fish fisher starship topgrade fd exa ripgrep fetchit-git greetd greetd-tuigreet rofi librewolf-bin librewolf-extension-bitwarden-bin librewolf-extension-ublock-origin-bin librewolf-extension-sponsorblock-bin github-cli ncspot ueberzug playerctl xdg-utils libreoffice-fresh libreoffice-fresh-en-gb && sudo systemctl enable greetd.service
 
 echo "##############################################################"
 echo "## Copying Halfwhit OS configuration files into users \$HOME ##"
