@@ -93,14 +93,14 @@ bootstrapparu() { \
 	whiptail --title "Bootstrap paru?" --yesno "Shall we start by bootstrapping paru, the package manager of choice?" 8 60
 }
 
-bootstrapparu && sudo pacman -Sy rustup && rustup default nightly && sudo pacman -Sy paru && paru -S devtools asp bat paru parui-git vim gnu-free-fonts
+bootstrapparu && sudo pacman -Sy rustup && rustup default nightly && sudo pacman -Sy paru && paru -Sy devtools asp bat paru parui-git vim gnu-free-fonts
 
 # Is this a VM?
 vmtools() { \
 	whiptail --title "Is this installation a VM?" --yesno "If this is a virtual machine, selecting yes will install the appropriate open-vm-tools" 8 60
 }
 
-vmtools && paru -S open-vm-tools xf86-input-vmmouse xf86-video-vmware mesa gtk2 gtkmm && sudo systemctl enable vmtoolsd --now
+vmtools && paru -Sy open-vm-tools xf86-input-vmmouse xf86-video-vmware mesa gtk2 gtkmm && sudo systemctl enable vmtoolsd --now
 
 # Window manager selection
 #choosewm() { \
@@ -113,7 +113,7 @@ vmtools && paru -S open-vm-tools xf86-input-vmmouse xf86-video-vmware mesa gtk2 
 
 #choosewm || error "User chose to exit"
 
-paru -S xorg xorg-xinit qtile qtile-extras picom alacritty nerd-fonts xsel xclip btop fish fisher starship topgrade fd exa ripgrep greetd greetd-tuigreet rofi librewolf-bin librewolf-extension-bitwarden-bin librewolf-extension-ublock-origin-bin librewolf-extension-sponsorblock-bin github-cli ncspot ueberzug playerctl xdg-utils libreoffice-fresh libreoffice-fresh-en-gb && sudo systemctl enable greetd.service
+paru -Sy xorg xorg-xinit qtile qtile-extras picom alacritty nerd-fonts xsel xclip btop fish fisher starship topgrade fd exa ripgrep greetd greetd-tuigreet rofi librewolf-bin librewolf-extension-bitwarden-bin librewolf-extension-ublock-origin-bin librewolf-extension-sponsorblock-bin github-cli ncspot ueberzug playerctl xdg-utils libreoffice-fresh libreoffice-fresh-en-gb && sudo systemctl enable greetd.service
 
 echo "##############################################################"
 echo "## Copying Halfwhit OS configuration files into users \$HOME ##"
