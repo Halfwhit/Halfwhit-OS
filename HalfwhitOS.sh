@@ -86,8 +86,7 @@ chaoticAUR(){ \
 	whiptail --title "Chaotic AUR" --yesno "Add the chaotic AUR?" 8 60
  }
 
- chaoticAUR && pacman-key --recv-key 3056513887B78AEB --keyserver keyserver.ubuntu.com && pacman-key --lsign-key 3056513887B78AEB && pacman -U 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.tar.zst' && pacman -U 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst' && sudo echo "[chaotic-aur]
-Include = /etc/pacman.d/chaotic-mirrorlist">>/etc/pacman.conf
+ chaoticAUR && wget -q -O chaotic-AUR-installer.bash https://raw.githubusercontent.com/SharafatKarim/chaotic-AUR-installer/main/install.bash && sudo bash chaotic-AUR-installer.bash && rm chaotic-AUR-installer.bash
 
 # Bootstrap paru
 bootstrapparu() { \
