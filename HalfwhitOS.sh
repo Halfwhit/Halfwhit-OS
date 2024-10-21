@@ -94,7 +94,7 @@ bootstrapparu() { \
 	whiptail --title "Bootstrap paru?" --yesno "Shall we start by bootstrapping paru, the package manager of choice?" 8 60
 }
 
-bootstrapparu && sudo pacman -Sy rustup && rustup default nightly && pacman -Sy paru && paru -S devtools asp bat paru parui-git vim gnu-free-fonts
+bootstrapparu && sudo pacman -Sy rustup && rustup default nightly && sudo pacman -Sy paru && paru -S devtools asp bat paru parui-git vim gnu-free-fonts
 
 # Is this a VM?
 vmtools() { \
