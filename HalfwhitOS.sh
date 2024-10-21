@@ -88,12 +88,12 @@ chaoticAUR(){ \
 
  chaoticAUR && (wget -q -O chaotic-AUR-installer.bash https://raw.githubusercontent.com/SharafatKarim/chaotic-AUR-installer/main/install.bash && sudo bash chaotic-AUR-installer.bash && rm chaotic-AUR-installer.bash)
 
-# Bootstrap paru
+# Paru
 bootstrapparu() { \
-	whiptail --title "Bootstrap paru?" --yesno "Shall we start by bootstrapping paru, the package manager of choice?" 8 60
+	whiptail --title "Paru Package Manager" --yesno "Shall we start by installing paru, the package manager of choice?" 8 60
 }
 
-bootstrapparu && sudo pacman -Sy rustup && rustup default nightly && sudo pacman -Sy paru && paru -Sy devtools asp bat paru parui-git vim gnu-free-fonts
+bootstrapparu && sudo pacman -Sy rustup && rustup default nightly && sudo pacman -Sy paru && paru -Sy devtools asp bat paru parui vim gnu-free-fonts
 
 # Is this a VM?
 vmtools() { \
@@ -113,7 +113,7 @@ vmtools && paru -Sy open-vm-tools xf86-input-vmmouse xf86-video-vmware mesa gtk2
 
 #choosewm || error "User chose to exit"
 
-paru -Sy xorg xorg-xinit qtile qtile-extras picom alacritty nerd-fonts xsel xclip btop fish fisher starship topgrade fd exa ripgrep greetd greetd-tuigreet rofi librewolf-bin librewolf-extension-bitwarden-bin librewolf-extension-ublock-origin-bin librewolf-extension-sponsorblock-bin github-cli ncspot ueberzug playerctl xdg-utils libreoffice-fresh libreoffice-fresh-en-gb && sudo systemctl enable greetd.service
+paru -Sy xorg xorg-xinit qtile qtile-extras picom alacritty nerd-fonts zellij xsel xclip btop fish fisher starship topgrade fd exa ripgrep greetd greetd-tuigreet rofi librewolf-bin librewolf-extension-bitwarden-bin librewolf-extension-ublock-origin-bin librewolf-extension-sponsorblock-bin github-cli ncspot ueberzug playerctl xdg-utils libreoffice-fresh libreoffice-fresh-en-gb && sudo systemctl enable greetd.service
 
 echo "##############################################################"
 echo "## Copying Halfwhit OS configuration files into users \$HOME ##"
