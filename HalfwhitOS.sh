@@ -81,6 +81,14 @@ lastchance || error "User choose to exit."
 grep "LC_CTYPE" /etc/locale.conf && echo "Checking the LC_CYPE variable in /etc/locale.conf. Variable is already set." || grep "LANG=" /etc/locale.conf | sed 's/LANG=/LC_CTYPE=/g' | sudo tee -a /etc/locale.conf
 sudo locale-gen
 
+# Chaotic AUR
+chaoticAUR(){ \
+	whiptail --title "Chaotic AUR" --yesno "Add the chaotic AUR?" 8 60
+ }
+
+ chaoticAUR && pacman-key --recv-key 3056513887B78AEB --keyserver keyserver.ubuntu.com && pacman-key --lsign-key 3056513887B78AEB && pacman -U 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.tar.zst' && pacman -U 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst' && sudo echo "[chaotic-aur]
+Include = /etc/pacman.d/chaotic-mirrorlist">>/etc/pacman.conf
+
 # Bootstrap paru
 bootstrapparu() { \
 	whiptail --title "Bootstrap paru?" --yesno "Shall we start by bootstrapping paru, the package manager of choice?" 8 60
