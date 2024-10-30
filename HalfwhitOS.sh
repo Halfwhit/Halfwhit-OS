@@ -100,7 +100,7 @@ vmtools() { \
 	whiptail --title "Is this installation a VM?" --yesno "If this is a virtual machine, selecting yes will install the appropriate open-vm-tools" 8 60
 }
 
-vmtools && paru -Sy open-vm-tools xf86-input-vmmouse xf86-video-vmware mesa gtk2 gtkmm && sudo systemctl enable vmtoolsd --now
+vmtools && paru -Sy open-vm-tools xf86-input-vmmouse xf86-video-vmware mesa gtk2 gtkmm && sudo systemctl enable --now vmtoolsd && sudo systemctl enable --now vmware-vmblock-fuse
 
 # Window manager selection
 #choosewm() { \
