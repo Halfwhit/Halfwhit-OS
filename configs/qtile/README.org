@@ -1,9 +1,21 @@
+#+title: Qtile Config
+#+PROPERTY: header-args :tangle config.py
+
+* Qtile Config
+description
+
+* Imports
+About the imports blah blah blah
+#+begin_src python
 from libqtile import bar, layout, qtile, widget
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
 from qtile_extras import widget
+#+end_src
 
+* Variables
+#+begin_src python
 mod = "mod4"
 terminal = "alacritty"
 widget_defaults = dict(
@@ -12,7 +24,10 @@ widget_defaults = dict(
     padding=10,
 )
 extension_defaults = widget_defaults.copy()
+#+end_src
 
+* Key Bindings
+#+begin_src python
 keys = [
     # A list of available commands that can be bound to keys can be found
     # at https://docs.qtile.org/en/latest/manual/config/lazy.html
@@ -61,7 +76,10 @@ keys = [
     Key([mod], "r", lazy.spawn("rofi -show drun"), desc="Run an application using rofi"),
     Key([mod, "shift"], "r", lazy.spawn("rofi -show run"), desc="Run a command using rofi"),
 ]
+#+end_src
 
+* Workspaces
+#+begin_src python
 groups = [Group(i) for i in "123456789"]
 
 for i in groups:
@@ -87,7 +105,10 @@ for i in groups:
             #     desc="move focused window to group {}".format(i.name)),
         ]
     )
+#+end_src
 
+* Layouts
+#+begin_src python
 layouts = [
     layout.Columns(border_focus_stack=["#d75f5f", "#8f3d3d"], border_width=4),
     layout.Max(),
@@ -103,7 +124,10 @@ layouts = [
     # layout.VerticalTile(),
     # layout.Zoomy(),
 ]
+#+end_src
 
+* Screens
+#+begin_src python
 screens = [
     Screen(
         top=bar.Bar(
@@ -151,6 +175,10 @@ screens = [
     ),
 ]
 
+#+end_src
+
+* Mouse
+#+begin_src python
 # Drag floating layouts.
 mouse = [
     Drag([mod], "Button1", lazy.window.set_position_floating(), start=lazy.window.get_position()),
@@ -167,7 +195,7 @@ cursor_warp = False
 floating_layout = layout.Floating(
     float_rules=[
         # Run the utility of `xprop` to see the wm class and name of an X client.
-        *layout.Floating.default_float_rules,
+        ,*layout.Floating.default_float_rules,
         Match(wm_class="confirmreset"),  # gitk
         Match(wm_class="makebranch"),  # gitk
         Match(wm_class="maketag"),  # gitk
@@ -176,7 +204,10 @@ floating_layout = layout.Floating(
         Match(title="pinentry"),  # GPG key password entry
     ]
 )
+#+end_src
 
+* Misc
+#+begin_src python
 auto_fullscreen = True
 focus_on_window_activation = "smart"
 reconfigure_screens = True
@@ -201,3 +232,4 @@ wl_xcursor_size = 24
 # We choose LG3D to maximize irony: it is a 3D non-reparenting WM written in
 # java that happens to be on java's whitelist.
 wmname = "LG3D"
+#+end_src
