@@ -25,8 +25,10 @@ if [ "$(id -u)" = 0 ]; then
 fi
 
 # Set up an error function
-error() { \
-	clear; printf "ERROR:\\n%s\\n" "$1" >&2; exit 1;
+error() {
+	clear
+	printf "ERROR:\\n%s\\n" "$1" >&2
+	exit 1
 }
 
 # Set up colours for the TUI
@@ -47,31 +49,34 @@ button=black,red"
 echo "##################################################################"
 echo "## Syncing the repos and installing 'whiptail' if not installed ##"
 echo "##################################################################"
-sudo pacman --noconfirm --needed -Syu libnewt wget|| error "Error syncing the repos."
+sudo pacman --noconfirm --needed -Syu libnewt wget || error "Error syncing the repos."
 
 # Basic boilerplate
 
-welcome() { \
+welcome() {
 	whiptail --title "Installing Halfwhit OS!" --msgbox "This is a script that will install Halfwhit OS (Halfwhit's operating system).  It's really just an installation script for my tiling window manager configurations and associated programs.  You will be asked to enter your sudo password at various points during this installation, so stay near the computer." 16 60
 }
 
 welcome || error "User choose to exit."
 
-speedwarning() { \
+speedwarning() {
 	whiptail --title "Installing Halfwhit OS!" --yesno "WARNING! The ParallelDownloads option is not enabled in /etc/pacman.conf. This may result in slower installation speeds. Are you sure you want to continue?" 16 60 || error "User choose to exit."
 }
 
-distrowarning() { \
+distrowarning() {
 	whiptail --title "Installing Halfwhit OS!" --msgbox "WARNING! While this script works on all Arch based distros, this hasn't been tested. If anyone else ever tries to use this script and has problems, please raise an issue on the Github page." 16 60 || error "User choose to exit."
 }
 
 grep -qs "#ParallelDownloads" /etc/pacman.conf && speedwarning
 grep -qs "ID=arch" /etc/os-release || distrowarning
 
-lastchance() { \
+lastchance() {
 	whiptail --title "Installing Halfwhit OS!" --msgbox "WARNING! The Halfwhit OS installation script is permanently in public beta testing. There are almost certainly errors in it; therefore, it is strongly recommended that you not install this on production machines. It is recommended that you try this out in either a virtual machine or on a test machine." 16 60
 
-	whiptail --title "Are You Sure You Want To Do This?" --yesno "Shall we begin installing Halfwhit OS?" 8 60 || { clear; exit 1; }
+	whiptail --title "Are You Sure You Want To Do This?" --yesno "Shall we begin installing Halfwhit OS?" 8 60 || {
+		clear
+		exit 1
+	}
 }
 
 lastchance || error "User choose to exit."
@@ -82,21 +87,21 @@ grep "LC_CTYPE" /etc/locale.conf && echo "Checking the LC_CYPE variable in /etc/
 sudo locale-gen
 
 # Chaotic AUR
-chaoticAUR(){ \
+chaoticAUR() {
 	whiptail --title "Chaotic AUR" --yesno "Add the chaotic AUR?" 8 60
- }
+}
 
- chaoticAUR && (wget -q -O chaotic-AUR-installer.bash https://raw.githubusercontent.com/SharafatKarim/chaotic-AUR-installer/main/install.bash && sudo bash chaotic-AUR-installer.bash && rm chaotic-AUR-installer.bash)
+chaoticAUR && (wget -q -O chaotic-AUR-installer.bash https://raw.githubusercontent.com/SharafatKarim/chaotic-AUR-installer/main/install.bash && sudo bash chaotic-AUR-installer.bash && rm chaotic-AUR-installer.bash)
 
 # Paru
-bootstrapparu() { \
+bootstrapparu() {
 	whiptail --title "Paru Package Manager" --yesno "Shall we start by installing paru, the package manager of choice?" 8 60
 }
 
 bootstrapparu && sudo pacman -Sy rustup && rustup default nightly && sudo pacman -Sy paru && paru -Sy devtools asp bat parui vim gnu-free-fonts
 
 # Is this a VM?
-vmtools() { \
+vmtools() {
 	whiptail --title "Is this installation a VM?" --yesno "If this is a virtual machine, selecting yes will install the appropriate open-vm-tools" 8 60
 }
 
@@ -114,6 +119,9 @@ vmtools && paru -Sy open-vm-tools xf86-input-vmmouse xf86-video-vmware mesa gtk2
 #choosewm || error "User chose to exit"
 
 paru -Sy xorg-server xorg-xinit qtile qtile-extras picom alacritty nerd-fonts zellij xsel xclip btop fish fisher starship topgrade fd exa ripgrep greetd greetd-tuigreet rofi librewolf-bin librewolf-extension-bitwarden-bin librewolf-extension-ublock-origin-bin librewolf-extension-sponsorblock-bin github-cli ncspot ueberzug playerctl xdg-utils libreoffice-fresh libreoffice-fresh-en-gb && sudo systemctl enable greetd.service
+paru -Sy emacs-nativecomp
+git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.config/emacs
+~/.config/emacs/bin/doom install
 
 echo "##############################################################"
 echo "## Copying Halfwhit OS configuration files into users \$HOME ##"
@@ -128,5 +136,6 @@ sudo cp -r ./bin/* /usr/bin/
 sudo cp ./configs/qtile/english.py /usr/lib/python3.12/site-packages/qtile_extras/resources/wordclock/
 
 chsh $USER -s /bin/fish
+~/.config/emacs/bin/doom sync
 
 sudo reboot
