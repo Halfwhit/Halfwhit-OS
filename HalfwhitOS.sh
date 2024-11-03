@@ -119,7 +119,7 @@ vmtools && paru -Sy open-vm-tools xf86-input-vmmouse xf86-video-vmware mesa gtk2
 #choosewm || error "User chose to exit"
 
 paru -Sy xorg-server xorg-xinit qtile qtile-extras picom alacritty nerd-fonts zellij xsel xclip btop fish fisher starship topgrade fd exa ripgrep greetd greetd-tuigreet rofi librewolf-bin librewolf-extension-bitwarden-bin librewolf-extension-ublock-origin-bin librewolf-extension-sponsorblock-bin github-cli ncspot ueberzug playerctl xdg-utils libreoffice-fresh libreoffice-fresh-en-gb && sudo systemctl enable greetd.service
-paru -Sy emacs-nativecomp ttf-ubuntu-font-family conky
+paru -Sy emacs-nativecomp ttf-ubuntu-font-family ttf-jetbrains-mono conky
 git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.config/emacs
 ~/.config/emacs/bin/doom install
 
