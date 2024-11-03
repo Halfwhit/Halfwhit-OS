@@ -1,0 +1,6 @@
+#!/bin/bash
+if pgrep -x conky > /dev/null; then
+	pkill -x conky
+else
+	conky -c ~/.config/conky/panel.conf
+fi

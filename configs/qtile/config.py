@@ -56,6 +56,11 @@ layout_theme = {"border_width": 2,
                 "border_normal": colours[0]
                 }
 
+@hook.subscribe.startup_once
+def start_once():
+    home = os.path.expanduser('~')
+    subprocess.call([home + '/.config/qtile/autostart.sh'])
+
 keys = [
     # The essentials
     Key([mod], "Return", lazy.spawn(terminal), desc="Terminal"),
@@ -67,6 +72,7 @@ keys = [
     Key([mod, "shift"], "r", lazy.reload_config(), desc="Reload the config"),
     Key([mod, "shift"], "q", lazy.spawn("dm-logout -r"), desc="Logout menu"),
     Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
+    Key([], "F1", lazy.spawn("conky-toggle"), desc='Toggle conky'),
 
     # Switch between windows
     # Some layouts like 'monadtall' only need to use j/k to move

@@ -93,7 +93,7 @@ bootstrapparu() { \
 	whiptail --title "Paru Package Manager" --yesno "Shall we start by installing paru, the package manager of choice?" 8 60
 }
 
-bootstrapparu && sudo pacman -Sy rustup && rustup default nightly && sudo pacman -Sy paru && paru -Sy devtools asp bat paru parui vim gnu-free-fonts
+bootstrapparu && sudo pacman -Sy rustup && rustup default nightly && sudo pacman -Sy paru && paru -Sy devtools asp bat parui vim gnu-free-fonts
 
 # Is this a VM?
 vmtools() { \
@@ -113,7 +113,7 @@ vmtools && paru -Sy open-vm-tools xf86-input-vmmouse xf86-video-vmware mesa gtk2
 
 #choosewm || error "User chose to exit"
 
-paru -Sy xorg xorg-xinit qtile qtile-extras picom alacritty nerd-fonts zellij xsel xclip btop fish fisher starship topgrade fd exa ripgrep greetd greetd-tuigreet rofi librewolf-bin librewolf-extension-bitwarden-bin librewolf-extension-ublock-origin-bin librewolf-extension-sponsorblock-bin github-cli ncspot ueberzug playerctl xdg-utils libreoffice-fresh libreoffice-fresh-en-gb && sudo systemctl enable greetd.service
+paru -Sy xorg-server xorg-xinit qtile qtile-extras picom alacritty nerd-fonts zellij xsel xclip btop fish fisher starship topgrade fd exa ripgrep greetd greetd-tuigreet rofi librewolf-bin librewolf-extension-bitwarden-bin librewolf-extension-ublock-origin-bin librewolf-extension-sponsorblock-bin github-cli ncspot ueberzug playerctl xdg-utils libreoffice-fresh libreoffice-fresh-en-gb && sudo systemctl enable greetd.service
 
 echo "##############################################################"
 echo "## Copying Halfwhit OS configuration files into users \$HOME ##"
@@ -123,6 +123,8 @@ echo "##############################################################"
 cp -r ./configs/* $HOME/.config/
 cp ./configs/X11/xinitrc ~/.xinitrc
 sudo cp -r ./etc-configs/* /etc/
+sudo cp -r ./bin/* /usr/bin/
+# Fix what I consider a typo with WordClock:
 sudo cp ./configs/qtile/english.py /usr/lib/python3.12/site-packages/qtile_extras/resources/wordclock/
 
 chsh $USER -s /bin/fish

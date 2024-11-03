@@ -8,6 +8,7 @@
 - [[#about][About]]
 - [[#imports][Imports]]
 - [[#variables][Variables]]
+- [[#custom-functions][Custom Functions]]
 - [[#key-bindings][Key Bindings]]
 - [[#workspaces][Workspaces]]
 - [[#layouts][Layouts]]
@@ -99,6 +100,15 @@ layout_theme = {"border_width": 2,
                 }
 #+end_src
 
+* Custom Functions
+
+#+begin_src python
+@hook.subscribe.startup_once
+def start_once():
+    home = os.path.expanduser('~')
+    subprocess.call([home + '/.config/qtile/autostart.sh'])
+#+end_src
+
 * Key Bindings
 A list of available commands that can be bound to keys can be found at: https://docs.qtile.org/en/latest/manual/config/lazy.html
 
@@ -133,6 +143,7 @@ keys = [
     Key([mod, "shift"], "r", lazy.reload_config(), desc="Reload the config"),
     Key([mod, "shift"], "q", lazy.spawn("dm-logout -r"), desc="Logout menu"),
     Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
+    Key([], "F1", lazy.spawn("conky-toggle"), desc='Toggle conky'),
 
     # Switch between windows
     # Some layouts like 'monadtall' only need to use j/k to move
