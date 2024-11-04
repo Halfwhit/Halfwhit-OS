@@ -367,7 +367,7 @@
 (map! :leader
       (:prefix ("=" . "open file")
        :desc "Edit agenda file"      "=" #'(lambda () (interactive) (find-file "~/.config/doom/start.org"))
-       :desc "Edit agenda file"      "a" #'(lambda () (interactive) (find-file "~/nc/Org/agenda.org"))
+       :desc "Edit agenda file"      "a" #'(lambda () (interactive) (find-file "~/Org/agenda.org"))
        :desc "Edit doom config.org"  "c" #'(lambda () (interactive) (find-file "~/.config/doom/config.org"))
        :desc "Edit doom init.el"     "i" #'(lambda () (interactive) (find-file "~/.config/doom/init.el"))
        :desc "Edit doom packages.el" "p" #'(lambda () (interactive) (find-file "~/.config/doom/packages.el"))))
@@ -379,7 +379,7 @@
 (map! :leader
       :desc "Org babel tangle" "m B" #'org-babel-tangle)
 (after! org
-  (setq org-directory "~/nc/Org/"
+  (setq org-directory "~/Org/"
         org-default-notes-file (expand-file-name "notes.org" org-directory)
         org-ellipsis " ▼ "
         org-superstar-headline-bullets-list '("◉" "●" "○" "◆" "●" "○" "◆")
@@ -407,7 +407,7 @@
              "CANCELLED(c)" )))) ; Task has been cancelled
 
 (after! org
-  (setq org-agenda-files '("~/nc/Org/agenda.org")))
+  (setq org-agenda-files '("~/Org/agenda.org")))
 
 (setq
    ;; org-fancy-priorities-list '("[A]" "[B]" "[C]")
@@ -619,7 +619,7 @@
 (use-package ox-man)
 (use-package ox-gemini)
 
-(setq org-journal-dir "~/nc/Org/journal/"
+(setq org-journal-dir "~/Org/journal/"
       org-journal-date-prefix "* "
       org-journal-time-prefix "** "
       org-journal-date-format "%B %d, %Y (%A) "
@@ -744,8 +744,8 @@
       ))
 
 (after! org
-  (setq org-roam-directory "~/nc/Org/roam/"
-        org-roam-graph-viewer "/usr/bin/brave"))
+  (setq org-roam-directory "~/Org/Hivemind/"
+        org-roam-graph-viewer "/usr/bin/librewolf"))
 
 (map! :leader
       (:prefix ("n r" . "org-roam")
