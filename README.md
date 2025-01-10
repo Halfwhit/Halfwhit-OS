@@ -1,4 +1,4 @@
-# ![Halfwhit-OS Logo](/configs/qtile/images/bee-white.png) Halfwhit-OS
+# ![Halfwhit-OS Logo](/configs/qtile/images/logo.png) Halfwhit-OS
 Dependancies:
 - git
 - libnewt
