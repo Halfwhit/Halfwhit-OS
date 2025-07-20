@@ -1,0 +1,9 @@
+2025/06/17-14:19:04.237 7baf Reusing MANIFEST /home/halfwhit/.config/Twitch/Local Storage/leveldb/MANIFEST-000001
+2025/06/17-14:19:04.247 7baf Recovering log #3
+2025/06/17-14:19:04.248 7baf Reusing old log /home/halfwhit/.config/Twitch/Local Storage/leveldb/000003.log 
+2025/06/17-14:22:07.519 7bb0 Level-0 table #5: started
+2025/06/17-14:22:07.522 7bb0 Level-0 table #5: 58139 bytes OK
+2025/06/17-14:22:07.523 7bb0 Delete type=0 #3
+2025/06/17-14:25:07.520 7bb0 Level-0 table #7: started
+2025/06/17-14:25:07.526 7bb0 Level-0 table #7: 51592 bytes OK
+2025/06/17-14:25:07.531 7bb0 Delete type=0 #4

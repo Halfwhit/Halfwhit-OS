@@ -1,0 +1,65 @@
+<unity_prefs version_major="1" version_minor="1">
+	<pref name="Achievements.State.dispatch_100_intercity_trains" type="int">1</pref>
+	<pref name="Achievements.State.dispatch_100_trains_on_time" type="int">1</pref>
+	<pref name="Achievements.State.dispatch_10_trains_on_time" type="int">1</pref>
+	<pref name="Achievements.State.dispatch_1_commuter_trains" type="int">1</pref>
+	<pref name="Achievements.State.dispatch_1_intercity_trains" type="int">1</pref>
+	<pref name="Achievements.State.dispatch_1_one_off_trains" type="int">1</pref>
+	<pref name="Achievements.State.dispatch_20_commuter_trains" type="int">1</pref>
+	<pref name="Achievements.State.dispatch_20_intercity_trains" type="int">1</pref>
+	<pref name="Achievements.State.dispatch_20_one_off_trains" type="int">1</pref>
+	<pref name="Achievements.State.dispatch_30_trains_on_time" type="int">1</pref>
+	<pref name="Achievements.State.dispatch_500_trains_on_time" type="int">1</pref>
+	<pref name="Achievements.State.dispatch_50_intercity_trains" type="int">1</pref>
+	<pref name="Achievements.State.dispatch_50_one_off_trains" type="int">1</pref>
+	<pref name="Achievements.State.dispatch_50_trains_on_time" type="int">1</pref>
+	<pref name="Achievements.State.finish_10_endless_cycles" type="int">1</pref>
+	<pref name="Achievements.State.finish_1_endless_cycles" type="int">1</pref>
+	<pref name="Achievements.State.have_10_ongoing_contracts" type="int">1</pref>
+	<pref name="Achievements.State.reach_10_endless_score" type="int">1</pref>
+	<pref name="Achievements.State.story_platform_signaller" type="int">1</pref>
+	<pref name="Achievements.State.story_pocket_watch" type="int">1</pref>
+	<pref name="Achievements.State.story_sang_with_jozic" type="int">1</pref>
+	<pref name="Achievements.State.story_started" type="int">1</pref>
+	<pref name="Achievements.State.story_switch_breaker" type="int">1</pref>
+	<pref name="Achievements.State.story_track_builder" type="int">1</pref>
+	<pref name="Analytics.PlayTime.play-endless" type="int">19</pref>
+	<pref name="BenchmarkReference" type="string">R2xvYmFs</pref>
+	<pref name="FirstTimePlayer" type="int">0</pref>
+	<pref name="LastPlayedEndlessVersion" type="string">Mi4zLjE5</pref>
+	<pref name="Options.DontShowHints" type="int">1</pref>
+	<pref name="Options.Language" type="string">ZW4=</pref>
+	<pref name="Screenmanager Fullscreen mode" type="int">1</pref>
+	<pref name="Screenmanager Fullscreen mode Default" type="int">1</pref>
+	<pref name="Screenmanager Resolution Height" type="int">1080</pref>
+	<pref name="Screenmanager Resolution Height Default" type="int">768</pref>
+	<pref name="Screenmanager Resolution Use Native" type="int">0</pref>
+	<pref name="Screenmanager Resolution Use Native Default" type="int">1</pref>
+	<pref name="Screenmanager Resolution Width" type="int">1920</pref>
+	<pref name="Screenmanager Resolution Width Default" type="int">1024</pref>
+	<pref name="Screenmanager Window Position X" type="int">0</pref>
+	<pref name="Screenmanager Window Position Y" type="int">0</pref>
+	<pref name="Stats.stat_contracts_ongoing" type="int">16</pref>
+	<pref name="Stats.stat_dispatch_commuter_trains" type="int">31</pref>
+	<pref name="Stats.stat_dispatch_freight_trains" type="int">0</pref>
+	<pref name="Stats.stat_dispatch_intercity_trains" type="int">100</pref>
+	<pref name="Stats.stat_dispatch_one_off_trains" type="int">71</pref>
+	<pref name="Stats.stat_dispatch_regional_trains" type="int">0</pref>
+	<pref name="Stats.stat_dispatch_trains_from_coachyard" type="int">0</pref>
+	<pref name="Stats.stat_dispatch_trains_on_time" type="int">623</pref>
+	<pref name="Stats.stat_dispatch_urban_trains" type="int">0</pref>
+	<pref name="Stats.stat_earn_rush_hour_stars" type="int">0</pref>
+	<pref name="Stats.stat_earn_timetable_stars" type="int">0</pref>
+	<pref name="Stats.stat_finish_endless_cycles" type="int">43</pref>
+	<pref name="Stats.stat_reach_endless_score_new" type="int">7</pref>
+	<pref name="UnityAnalyticsInstallationId" type="string">OGQxZDkwOTcwZDQ5MjUwMGE4N2ZjMWY0YjY4MjEyZDg=</pref>
+	<pref name="UnityInstallationId" type="string">OGQxZDkwOTcwZDQ5MjUwMGE4N2ZjMWY0YjY4MjEyZDg=</pref>
+	<pref name="UnitySelectMonitor" type="int">0</pref>
+	<pref name="endlessScore_prague" type="string">eyJTY29yZSI6NSwiR3JlZW5UcmFmZmljQ291bnQiOjUsIlJlZFRyYWZmaWNDb3VudCI6MH0=</pref>
+	<pref name="score_endless_prague" type="int">5</pref>
+	<pref name="totalTime" type="int">1800</pref>
+	<pref name="unity.cloud_userid" type="string">OGQxZDkwOTcwZDQ5MjUwMGE4N2ZjMWY0YjY4MjEyZDg=</pref>
+	<pref name="unity.player_session_count" type="string">MQ==</pref>
+	<pref name="unity.player_sessionid" type="string">NTIxNjY0NTk4NjI5NjI4NjIyMw==</pref>
+	<pref name="unity.services.analytics.pipl_consent_status" type="int">3</pref>
+</unity_prefs>

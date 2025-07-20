@@ -1,0 +1,1 @@
+SUBSYSTEM=="input", ATTRS{idVendor}=="044f", ATTRS{idProduct}=="b679", MODE="0666"

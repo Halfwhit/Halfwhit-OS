@@ -1,0 +1,17 @@
+[Desktop Entry]
+Comment[en_GB]=
+Comment=
+Exec=/usr/bin/emacs --daemon
+GenericName[en_GB]=
+GenericName=
+Icon=emacs
+MimeType=
+Name[en_GB]=Emacs
+Name=Emacs
+Path=
+StartupNotify=true
+Terminal=false
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=

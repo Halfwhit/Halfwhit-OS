@@ -1,0 +1,11 @@
+[Applications][discord]
+Seen=true
+
+[Applications][net.openvpn.openvpn3_indicator]
+Seen=true
+
+[Applications][zen]
+Seen=true
+
+[Services][libnotificationmanager]
+ShowPopupsInDndMode=true

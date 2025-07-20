@@ -1,0 +1,7 @@
+2025/07/11-19:17:34.336 524 Reusing MANIFEST /home/halfwhit/.config/discord/WebStorage/3/IndexedDB/indexeddb.leveldb/MANIFEST-000001
+2025/07/11-19:17:34.336 524 Recovering log #3
+2025/07/11-19:17:34.336 524 Reusing old log /home/halfwhit/.config/discord/WebStorage/3/IndexedDB/indexeddb.leveldb/000003.log 
+2025/07/11-22:15:14.996 524 Level-0 table #5: started
+2025/07/11-22:15:14.998 524 Level-0 table #5: 833 bytes OK
+2025/07/11-22:15:14.999 524 Delete type=0 #3
+2025/07/11-22:15:15.000 524 Manual compaction at level-0 from (begin) .. (end); will stop at (end)

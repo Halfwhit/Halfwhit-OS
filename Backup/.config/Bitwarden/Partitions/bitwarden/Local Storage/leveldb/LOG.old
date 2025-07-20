@@ -1,0 +1,3 @@
+2025/06/12-09:36:54.437 1505 Reusing MANIFEST /home/halfwhit/.config/Bitwarden/Partitions/bitwarden/Local Storage/leveldb/MANIFEST-000001
+2025/06/12-09:36:54.438 1505 Recovering log #3
+2025/06/12-09:36:54.438 1505 Reusing old log /home/halfwhit/.config/Bitwarden/Partitions/bitwarden/Local Storage/leveldb/000003.log 
