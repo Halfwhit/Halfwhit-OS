@@ -1,8 +1,0 @@
-[terminal.shell]
-program = "/bin/fish"
-
-[window]
-opacity = 0.9
-
-[font]
-size = 12

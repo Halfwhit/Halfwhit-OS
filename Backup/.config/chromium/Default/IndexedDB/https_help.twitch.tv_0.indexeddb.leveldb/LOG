@@ -1,6 +1,0 @@
-2025/03/18-16:43:20.305 e79a Creating DB /home/halfwhit/.config/chromium/Default/IndexedDB/https_help.twitch.tv_0.indexeddb.leveldb since it was missing.
-2025/03/18-16:43:20.307 e79a Reusing MANIFEST /home/halfwhit/.config/chromium/Default/IndexedDB/https_help.twitch.tv_0.indexeddb.leveldb/MANIFEST-000001
-2025/03/18-16:43:22.352 e7aa Level-0 table #5: started
-2025/03/18-16:43:22.354 e7aa Level-0 table #5: 30948 bytes OK
-2025/03/18-16:43:22.356 e7aa Delete type=0 #3
-2025/03/18-16:43:22.357 e79c Manual compaction at level-0 from '\x00\x0a\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x0b\x00\x00\x00' @ 0 : 0; will stop at (end)
